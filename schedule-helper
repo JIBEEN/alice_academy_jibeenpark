@@ -1,0 +1,37 @@
+import random
+
+def my_schedule():
+    day = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
+    time = ['10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM']
+    
+    return random.choice(day) + ' ' + random.choice(time)
+
+print('예약 스케쥴을 추천드릴까요?')
+print('(네/아니오 로 대답 해주세요!)')
+
+respond1 = input() #대답 받기   
+
+if respond1 == '네': #'네'라고 대답했을 경우 랜덤스케쥴 출력하고 어떤지 물어봄
+    print(my_schedule() + ' 어떠세요?')
+    print("(맘에 드신다면 '좋아요'를 입력 해주세요^^)")
+
+else: #그 이외의 경우 대화 종료
+    print('알겠습니다..!')
+    
+    
+respond2 = input()
+
+if respond2 == '좋아요':
+    print('해당 날짜로 스케쥴링 도와드리겠습니다~^^')
+    
+else:    
+    print('그럼' + my_schedule() + ' 은 어떠세요?')
+    print("(맘에 드신다면 '좋아요'를 입력 해주세요^^)")
+    
+respond3 = input()
+
+if respond3 == '좋아요':
+    print('해당 날짜로 스케쥴링 도와드리겠습니다~^^')
+    
+else:  #2 번이나 거절한 경우 예약 포기
+    print('죄송합니다. 예약 가능한 시간이 없습니다ㅠ')
